@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div id='app'>
+      <p>{{number}}</p>
+      <!-- 如果某些标签或者某些数据渲染在页面上之后,不再进行更新,v-once指令, 提高编译执行效率 
+            添加了v-once指令的标签,只有在页面初始化的渲染一次数据,之后数据更新,不会在页面中重新更新
+        -->
+        <h3 v-once>{{ number}}</h3>
+    </div>
+    <script src="../js/vue.js"></script>
+     
+    <script>
+      const vm =  new Vue({
+            el:"#app",
+            data:{
+              number:10,
+            },
+            methods:{}
+        })
+    </script>
+</body>
+</html>

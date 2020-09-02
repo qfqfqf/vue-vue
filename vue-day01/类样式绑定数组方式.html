@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        .h1 {
+            font-size: 40px;
+
+        }
+
+        .active {
+            width: 200px;
+            height: 200px;
+            background-color: darkgrey;
+        }
+
+        .section {
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+       <!-- 使用数组方式表示 [k] k不加引号表示的是变量 'k'表示的是类名 -->
+        <div class="h1" v-bind:class="[active , section]">不知天高地厚</div>
+        <hr>
+       
+        <div v-bind:class="[' active', 'section ']">那又如何</div>
+    </div>
+    <script src='../js/vue.js'></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                active:'active' ,
+                section:'section',
+            },
+            methods: {},
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        .h1 {
+            font-size: 40px;
+
+        }
+
+        .active {
+            width: 200px;
+            height: 200px;
+            background-color: darkgrey;
+        }
+
+        .section {
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 对象形式 -->
+        <!-- 可以在类名后面写一个变量然后到data里面找,这个变量是布尔值,如果是true渲染,false不渲染,也可以直接在类名后写false,或true
+         -->
+        <div class="h1" v-bind:class="{active: isActive , section:false} ">不知天高地厚</div>
+        <hr>
+        <!-- 直接写一个变量到data里面查询,变量对象形式,里面写的是类名及布尔值,true调用,fasle不调用,可以直接进行更改 -->
+        <div v-bind:class="obj">那又如何</div>
+    </div>
+    <script src='../js/vue.js'></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                obj: { active: true, section: true }
+            },
+            methods: {},
+        })
+    </script>
+</body>
+
+</html>

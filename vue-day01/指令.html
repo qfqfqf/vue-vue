@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display:none
+        }
+    </style>
+</head>
+<body>
+    <div id='app' v-cloak>
+<p>{{msg}}</p>
+<!-- 可以使用如上方式展示数据,也可以使用v-text指令来渲染数据 -->
+<p v-text='msg'></p>
+<!-- v-text 和 v-html本质的差别 是否会解析html标签 -->
+<p v-text='msg2'></p>
+<p v-html='msg2'></p>
+ <!-- v-pre 保留预格式 包括原始的{{}} 插值表达式  -->
+ <h2 v-pre>{{msg}}</h2>
+ <p>{{msg2}}</p>
+    </div>
+    <script src='../js/vue.js'></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{ 
+                msg:'红日',
+                msg2:'<span>落日</span>'
+             },
+            methods:{},
+        })
+    </script>
+</body>
+</html>
